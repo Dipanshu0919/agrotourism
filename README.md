@@ -10,6 +10,9 @@ Files added:
 
 How to use:
 1. The redesign already uses the photos you uploaded under `assets/photos/`.
+2. Gallery images are discovered dynamically from `assets/photos/` directory listing (no hardcoded gallery filenames).
+3. Keep uploading/removing images inside `assets/photos/`; gallery updates automatically on next page load.
+4. For Apache/cPanel hosting, keep `assets/photos/.htaccess` with `Options +Indexes` so directory listing is allowed.
 
 Used images (primary references in the layout):
 - `assets/photos/WhatsApp Image 2026-08-21 at 3.19.47 PM.jpeg` — hero / primary garden image
@@ -19,7 +22,7 @@ Used images (primary references in the layout):
 - `assets/photos/WhatsApp Image 2026-08-21 at 3.20.15 PM.jpeg` — room interior
 
 If you'd like different primary images, either rename your preferred files to match the names above, or update the `src` attributes in `index.html`.
-2. Serve the folder with any static server. Example:
+5. Serve the folder with any static server. Example:
 
 ```bash
 # from project root

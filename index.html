@@ -22,6 +22,9 @@
     <nav class="desktop-nav" aria-label="Primary navigation">
       <a href="#experience">Experience</a>
       <a href="#stay">Stay</a>
+      <a href="#facilities">Facilities</a>
+      <a href="#offers">Offers</a>
+      <a href="#activities">Activities</a>
       <a href="#gallery">Gallery</a>
       <a href="#location">Location</a>
     </nav>
@@ -33,6 +36,9 @@
   <div class="mobile-menu">
     <a href="#experience">Experience</a>
     <a href="#stay">Stay</a>
+    <a href="#facilities">Facilities</a>
+    <a href="#offers">Offers</a>
+    <a href="#activities">Activities</a>
     <a href="#gallery">Gallery</a>
     <a href="#location">Location</a>
     <a href="#contact">Enquire</a>
@@ -210,10 +216,61 @@
       </div>
     </section>
 
+    <section class="offers section" id="offers">
+      <div class="activities-head">
+        <div>
+          <div class="section-tag">05 / ACTIVITIES & OFFERS</div>
+          <h2>Activities<br><span>& Offers</span></h2>
+        </div>
+        <p>See what's waiting for you.</p>
+      </div>
+      <div class="promotions-showcase" aria-live="polite" aria-busy="true">
+        <div class="promotion-track" data-promotion-track aria-label="Activities and offers promotional posters"></div>
+      </div>
+      <div class="promotion-meta">
+        <span class="promotion-category">Special</span>
+        <span class="promotion-count" aria-live="polite">00 / 00</span>
+      </div>
+      <div class="promotion-controls">
+        <div class="promotion-progress"><span></span></div>
+        <div class="promotion-arrows">
+          <button class="promotion-side-arrow promotion-prev" type="button" aria-label="Previous promotion">←</button>
+          <button class="promotion-side-arrow promotion-next" type="button" aria-label="Next promotion">→</button>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="activities section" id="activities">
+      <div class="activity-experience">
+        <div class="activity-intro">
+          <div class="section-tag">06 / ACTIVITIES</div>
+          <h2>Make a day<br><span>of it.</span></h2>
+          <p>Real moments. Real activities. Something for everyone.</p>
+        </div>
+        <div class="activity-carousel" data-activity-carousel aria-busy="true">
+          <div class="activity-stage">
+            <button class="activity-nav activity-nav-prev" type="button" data-activity-direction="-1" aria-label="Previous activity">←</button>
+            <div class="activity-track" data-activity-track aria-live="polite"></div>
+            <button class="activity-nav activity-nav-next" type="button" data-activity-direction="1" aria-label="Next activity">→</button>
+          </div>
+          <div class="activity-mobile-controls" aria-label="Activity navigation">
+            <button class="activity-nav" type="button" data-activity-direction="-1" aria-label="Previous activity">←</button>
+            <button class="activity-nav" type="button" data-activity-direction="1" aria-label="Next activity">→</button>
+          </div>
+          <div class="activity-information">
+            <span class="activity-counter" data-activity-counter>01 / 01</span>
+            <h3 class="activity-title" data-activity-title>Activities</h3>
+            <p class="activity-description" data-activity-description></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="gallery section" id="gallery">
       <div class="gallery-head">
         <div>
-          <div class="section-tag">05 / A GLIMPSE</div>
+          <div class="section-tag">07 / A GLIMPSE</div>
           <h2>Take a look<br><span>around.</span></h2>
         </div>
         <p>See the place, the rooms and the beautiful surroundings.</p>
@@ -243,7 +300,7 @@
 
     <section class="location section" id="location">
       <div class="location-copy">
-        <div class="section-tag">06 / FIND US</div>
+        <div class="section-tag">08 / FIND US</div>
         <h2>Easy to reach.<br><span>Away from the city.</span></h2>
         <p>Located in Vikramgad, Maharashtra, S.K. Agro Tourism & Hotel is a peaceful getaway for families, friends and groups.</p>
         <address>Vikramgad-Wada Highway<br>Village Onde<br>Taluka Vikramgad<br>Maharashtra 401605</address>
@@ -290,6 +347,21 @@
   <div class="lightbox" aria-hidden="true">
     <button class="lightbox-close" aria-label="Close image">×</button>
     <img src="" alt="">
+  </div>
+  <div class="promotion-lightbox" aria-hidden="true">
+    <button class="lightbox-close promotion-lightbox-close" aria-label="Close promotional poster">×</button>
+    <img src="" alt="">
+    <div class="promotion-lightbox-controls">
+      <button class="promotion-lightbox-arrow promotion-lightbox-prev" type="button" aria-label="Previous promotional poster">←</button>
+      <button class="promotion-lightbox-arrow promotion-lightbox-next" type="button" aria-label="Next promotional poster">→</button>
+    </div>
+  </div>
+
+  <div class="activity-viewer" aria-hidden="true">
+    <button class="lightbox-close activity-viewer-close" aria-label="Close activity viewer">×</button>
+    <button class="activity-viewer-arrow activity-viewer-prev" type="button" aria-label="Previous activity">←</button>
+    <div class="activity-viewer-media" data-activity-viewer-media></div>
+    <button class="activity-viewer-arrow activity-viewer-next" type="button" aria-label="Next activity">→</button>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
