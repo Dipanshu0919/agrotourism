@@ -16,17 +16,52 @@ document.addEventListener("DOMContentLoaded", () => {
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  menuButton?.addEventListener("click", () => {
-    mobileMenu.classList.toggle("open");
-    document.body.classList.toggle("menu-open");
-  });
-
-  mobileMenu?.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => {
-      mobileMenu.classList.remove("open");
+  if (menuButton && mobileMenu) {
+    const closeMenu = () => {
       document.body.classList.remove("menu-open");
+      mobileMenu.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Open menu");
+    };
+
+    const openMenu = () => {
+      document.body.classList.add("menu-open");
+      mobileMenu.classList.add("open");
+      menuButton.setAttribute("aria-expanded", "true");
+      menuButton.setAttribute("aria-label", "Close menu");
+    };
+
+    menuButton.addEventListener("click", () => {
+      if (mobileMenu.classList.contains("open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
-  });
+
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+    const desktopMediaQuery = window.matchMedia("(min-width: 901px)");
+    const handleDesktopChange = event => {
+      if (event.matches) {
+        closeMenu();
+      }
+    };
+
+    if (desktopMediaQuery.addEventListener) {
+      desktopMediaQuery.addEventListener("change", handleDesktopChange);
+    } else {
+      desktopMediaQuery.addListener(handleDesktopChange);
+    }
+  }
 
   if (window.gsap && window.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
@@ -64,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    document.querySelectorAll(".section-tag, h2, .intro-copy, .experience-card, .stay-copy, .facilities-intro-copy, .facility-card, .gallery-item, .location-copy").forEach(el => {
+    document.querySelectorAll(".section-tag, h2, .intro-copy, .about-copy, .experience-card, .stay-copy, .facilities-intro-copy, .facility-card, .gallery-item, .location-copy").forEach(el => {
       gsap.from(el, {
         y: 28,
         opacity: 0,
