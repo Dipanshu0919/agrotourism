@@ -229,10 +229,12 @@ body.menu-open .menu-button i:last-child{top:20px;transform:rotate(-45deg)}
 /* activities experience */
 .activities.section{max-width:none;padding:0;background:var(--cream);overflow-x:hidden}
 .activity-experience{max-width:var(--max);margin:auto;padding:clamp(64px,7vw,96px) var(--pad)}
-.activity-intro{display:grid;grid-template-columns:1fr .55fr;gap:10%;align-items:end}
-.activity-intro h2{margin-top:22px}
+.activity-intro{display:grid;grid-template-columns:1fr .55fr;column-gap:10%;row-gap:0;align-items:start}
+.activity-intro .section-tag{grid-column:1;grid-row:1}
+.activity-intro h2{grid-column:2;grid-row:1 / span 2;margin-top:0}
+.activity-intro p{grid-column:1;grid-row:2;margin-top:22px}
 .activity-intro p{max-width:390px;font-size:15px;line-height:1.75;color:var(--muted)}
-.activity-carousel{margin-top:clamp(36px,4vw,58px);touch-action:pan-y}
+.activity-carousel{margin-top:clamp(28px,3vw,44px);touch-action:pan-y}
 .activity-stage{display:grid;grid-template-columns:42px minmax(0,1fr) 42px;align-items:center;gap:clamp(10px,1.6vw,24px);overflow:visible}
 .activity-track{display:grid;grid-template-columns:minmax(110px,18vw) minmax(0,1fr) minmax(110px,18vw);align-items:center;gap:clamp(12px,2vw,28px);min-width:0;transition:opacity .22s ease,transform .45s cubic-bezier(.2,.7,.2,1)}
 .activity-track.is-changing{opacity:.45;transform:scale(.985)}
@@ -396,7 +398,10 @@ footer{background:#0e1511;color:#fff;padding:58px clamp(32px,5vw,80px) 23px}
   .gallery-grid{--gallery-visible:2}
   .promotions-showcase{height:clamp(440px,72vw,560px)}
   .promotion-card{flex-basis:clamp(280px,43vw,350px)}
-  .activity-intro{grid-template-columns:1fr;gap:28px}
+  .activity-intro{grid-template-columns:1fr;gap:0;align-items:start}
+  .activity-intro .section-tag{grid-column:1;grid-row:auto}
+  .activity-intro h2{grid-column:1;grid-row:auto;margin-top:20px}
+  .activity-intro p{grid-column:1;grid-row:auto;margin-top:20px}
   .activity-stage{grid-template-columns:34px minmax(0,1fr) 34px;gap:10px}
   .activity-nav{width:34px;height:34px}
   .location-map{height:420px}
