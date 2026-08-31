@@ -4,8 +4,8 @@ This repository contains a polished static-site scaffold built to present S.K. A
 
 Files added:
 - `index.html` — photography-first editorial layout referencing uploaded photos.
-- `css/style.css` — updated editorial design system, spacing and responsive rules.
-- `js/main.js` — GSAP/ScrollTrigger interactions: cinematic hero, scroll transition, lightbox.
+- `style.css` — updated editorial design system, spacing and responsive rules.
+- `main.js` — GSAP/ScrollTrigger interactions: cinematic hero, scroll transition, lightbox.
 - `assets/photos/` — your uploaded photos are used directly by the layout.
 
 How to use:
